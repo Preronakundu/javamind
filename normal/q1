@@ -1,0 +1,27 @@
+// merge two arrays and sort it using easy pisy 
+
+import java.util.*;
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class mergesort {
+
+    public static void main(String[] args) {
+        int[] arr = {2,5,2,8,4,9,8};
+        int[] arr1 = {3,5,1,9,6,7,8};
+        System.out.println("Original array:" +arr+ "and" +arr1);
+        int length1 = arr.length-1;
+        int length2 = arr1.length-1;
+        int[] mergedArray = new int[length1 + length2];
+
+        // Copy elements from the first array
+        System.arraycopy(arr, 0, mergedArray, 0, length1);
+        
+        // Copy elements from the second array
+        System.arraycopy(arr1, 0, mergedArray, length1, length2);
+
+        Arrays.sort(mergedArray);
+        System.out.println(Arrays.toString(mergedArray));
+
+    }
+}
